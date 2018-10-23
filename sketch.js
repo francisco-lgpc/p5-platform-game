@@ -1,8 +1,10 @@
 const player = new Player;
-const platform1 = new Platform;
-Platforms.add(platform1);
-const platform2 = new Platform;
-Platforms.add(platform2);
+
+const platformRepo = new PlatformRepo;
+const platform1 = new Platform(200, 200);
+platformRepo.add(platform1);
+const platform2 = new Platform(150, 100);
+platformRepo.add(platform2);
 
 
 const UP = 0;
@@ -19,6 +21,8 @@ function setup() {
 function draw() {
   background(0);
   player.show();
+  platform1.show();
+  platform2.show();
 }
 
 function keyPressed() {

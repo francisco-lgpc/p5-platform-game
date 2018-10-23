@@ -1,18 +1,21 @@
-class Platforms {
+class PlatformRepo {
   constructor () {
     this.platforms = []
   }
 
-  static all () {
+  all () {
     this.platforms
   }
 
-  static add(task) {
-    this.platforms.push(task)
+  add(object) {
+    this.platforms.push(object)
   }
 
-  static collide () {
-    all
+  collide (object) {
+    console.log(this.platforms.map( platform => {
+      collideRectRect (object.x, object.y, object.w, object.h,
+                      platform.x, platform.y, platform.w, platform.h);
+    }).every( collision => collision === false ));
   }
 
 }
