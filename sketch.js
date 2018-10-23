@@ -1,4 +1,9 @@
 const player = new Player;
+const platform1 = new Platform;
+Platforms.add(platform1);
+const platform2 = new Platform;
+Platforms.add(platform2);
+
 
 const UP = 0;
 const LEFT = 1;
