@@ -1,11 +1,9 @@
 const player = new Player;
 
-const platformRepo = new PlatformRepo;
-const platform1 = new Platform(200, 200);
-platformRepo.add(platform1);
-const platform2 = new Platform(150, 100);
-platformRepo.add(platform2);
+const platformsHandler = new PlatformsHandler();
 
+const platform1 = new Platform(200, 200);
+const platform2 = new Platform(150, 100);
 
 const UP = 0;
 const LEFT = 1;

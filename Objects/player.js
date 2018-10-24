@@ -2,8 +2,8 @@ class Player {
   constructor () {
     this.x = 50;
     this.y = 500;
-    this.w = 55;
-    this.h = 55;
+    this.w = 50;
+    this.h = 50;
   }
 
   show () {
@@ -13,17 +13,17 @@ class Player {
   move (direction) {
     switch (direction) {
       case LEFT:
-        this.x -= 55;
-        if (platformRepo.collide(this)) this.x += 55;
+        if (!hasLeftCollisionBetween(this, platformsHandler.collection)) this.x -= 50;
         break;
       case UP:
-        this.y -= 55;
-        if (platformRepo.collide(this)) this.y += 55;
+        this.y -= 50;
+        if (hasUpperCollisionBetween(this, platformsHandler.collection)) this.y += 50;
         break;
       case RIGHT:
-        this.x += 55;
-        if (platformRepo.collide(this)) this.x -= 55;
+        this.x += 50;
+        if (hasRightCollisionBetween(this, platformsHandler.collection)) this.x -= 50;
         break;
     }
   }
+
 }
