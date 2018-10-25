@@ -1,6 +1,5 @@
 const player = new Player;
 
-const platformsHandler = new PlatformsHandler();
 
 const platform1 = new Platform(200, 200);
 const platform2 = new Platform(150, 100);
@@ -24,7 +23,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (keyCode === LEFT_ARROW) {
+  if (keyCode === LEFT_ARROW && !player.hasLeftCollisionWith(Platform.all())) {
     player.move(LEFT);
   } else if (keyCode === RIGHT_ARROW) {
     player.move(RIGHT);

@@ -1,5 +1,6 @@
-class Player {
+class Player extends GameObject {
   constructor () {
+    super();
     this.x = 50;
     this.y = 500;
     this.w = 50;
@@ -13,7 +14,7 @@ class Player {
   move (direction) {
     switch (direction) {
       case LEFT:
-        if (!hasLeftCollisionBetween(this, platformsHandler.collection)) this.x -= 50;
+        this.x -= 50;
         break;
       case UP:
         this.y -= 50;
