@@ -1,8 +1,10 @@
-const player = new Player;
 
+god = new God;
+god.testPhaseWorldCreation();
+god.gravityForce = 1;
 
-const platform1 = new Platform(200, 200);
-const platform2 = new Platform(150, 100);
+player = god.player;
+platforms = god.platformCollection;
 
 const UP = 0;
 const LEFT = 1;
@@ -12,22 +14,21 @@ function setup() {
   createCanvas(800, 600);
   background(0);
   noStroke();
-  frameRate(120);
+  frameRate(1);
 }
 
 function draw() {
   background(0);
-  player.show();
-  platform1.show();
-  platform2.show();
+  god.gravityPower();
+  god.inlightTheWorld();
 }
 
 function keyPressed() {
-  if (keyCode === LEFT_ARROW && !player.hasLeftCollisionWith(Platform.all())) {
+  if (keyCode === LEFT_ARROW && !player.hasLeftCollisionWith(platforms)) {
     player.move(LEFT);
-  } else if (keyCode === RIGHT_ARROW) {
+  } else if (keyCode === RIGHT_ARROW && !player.hasRightCollisionWith(platforms)) {
     player.move(RIGHT);
-  } else if (keyCode === UP_ARROW) {
+  } else if (keyCode === UP_ARROW && !player.hasUpperCollisionWith(platforms)) {
     player.move(UP);
   }
 }
