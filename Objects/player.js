@@ -18,11 +18,9 @@ class Player extends GameObject {
         break;
       case UP:
         this.y -= 50;
-        if (hasUpperCollisionBetween(this, platformsHandler.collection)) this.y += 50;
         break;
       case RIGHT:
         this.x += 50;
-        if (hasRightCollisionBetween(this, platformsHandler.collection)) this.x -= 50;
         break;
     }
   }

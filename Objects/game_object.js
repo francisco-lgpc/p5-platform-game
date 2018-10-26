@@ -1,26 +1,26 @@
 class GameObject {
 
-  isCollidingWithAny (objectX, objectY, objectW, objectH, collection) {
+  isCollidingWithAny (objectH, objectW, objectX, objectY, collection) {
     return !collection.map( collectionElement =>
       collideRectRect (objectX, objectY, objectW, objectH,
-                      collectionElement.x, collectionElement.y, collectionElement.w, collectionElement.h)
+                      collectionElement.h, collectionElement.w, collectionElement.x, collectionElement.y)
     ).every( collision => collision === false )
   }
 
   hasLeftCollisionWith (collection) {
-    return this.isCollidingWithAny(this.x - this.w/4, this.y, this.w/2, this.h, collection)
+    return this.isCollidingWithAny(1, 1, this.x - this.w/2, this.y, collection)
   }
 
   hasRightCollisionWith (collection) {
-    return this.isCollidingWithAny(this.x - this.w/4, this.y, this.w/2, this.h, collection)
+    return this.isCollidingWithAny(1, 1, this.x + this.w/2, this.y, collection)
   }
 
   hasUpperCollisionWith (collection) {
-    return this.isCollidingWithAny(this.x, this.y - this.h/4, this.w, this.h/2, collection)
+    return this.isCollidingWithAny(1, 1, this.x, this.y - this.h/2, collection)
   }
 
   hasRightCollisionWith (collection) {
-    return this.isCollidingWithAny(this.x, this.y + this.h/4, this.w, this.h/2, collection)
+    return this.isCollidingWithAny(1, 1, this.x, this.y + this.h/2, collection)
   }
 
 }

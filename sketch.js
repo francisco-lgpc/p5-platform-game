@@ -25,9 +25,9 @@ function draw() {
 function keyPressed() {
   if (keyCode === LEFT_ARROW && !player.hasLeftCollisionWith(Platform.all())) {
     player.move(LEFT);
-  } else if (keyCode === RIGHT_ARROW) {
+  } else if (keyCode === RIGHT_ARROW && !player.hasRightCollisionWith(Platform.all())) {
     player.move(RIGHT);
-  } else if (keyCode === UP_ARROW) {
+  } else if (keyCode === UP_ARROW && !player.hasUpperCollisionWith(Platform.all())) {
     player.move(UP);
   }
 }
