@@ -14,12 +14,11 @@ function setup() {
   createCanvas(800, 600);
   background(0);
   noStroke();
-  frameRate(1);
+  frameRate(60);
 }
 
 function draw() {
   background(0);
-  god.gravityPower();
   god.inlightTheWorld();
 }
 
@@ -32,3 +31,5 @@ function keyPressed() {
     player.move(UP);
   }
 }
+
+setInterval(function() {god.gravityPower()}, 1000);

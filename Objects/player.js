@@ -18,7 +18,7 @@ class Player extends GameObject {
         this.x -= 50;
         break;
       case UP:
-        this.y -= 100;
+        this.y -= 50;
         break;
       case RIGHT:
         this.x += 50;

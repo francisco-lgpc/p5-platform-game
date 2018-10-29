@@ -31,7 +31,9 @@ class God {
 
   gravityPower () {
     for (var i = this.gravityForce; i > 0; i--) {
-      if (this.player.y < 500) {this.player.gravity()};
+      if (this.player.y < 500 && !this.player.hasInferiorCollisionWith(this.platformCollection)) {
+        this.player.gravity()
+      };
     }
   }
 
