@@ -27,9 +27,11 @@ function keyPressed() {
     player.move(LEFT);
   } else if (keyCode === RIGHT_ARROW && !player.hasRightCollisionWith(platforms)) {
     player.move(RIGHT);
-  } else if (keyCode === UP_ARROW && !player.hasUpperCollisionWith(platforms)) {
+  } else if (keyCode === UP_ARROW &&
+    !player.hasUpperCollisionWith(platforms) &&
+    player.hasInferiorCollisionWith(platforms)) {
     player.move(UP);
   }
 }
 
-setInterval(function() {god.gravityPower()}, 1000);
+setInterval(function() {god.gravityPower()}, 1500);

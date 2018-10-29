@@ -13,12 +13,11 @@ class God {
   }
 
   testPhaseWorldCreation () {
-
     this.platformCollection.push(new Platform(200, 200));
-    this.platformCollection.push(new Platform(150, 100))
+    this.platformCollection.push(new Platform(150, 100));
+    this.platformCollection.push(new Platform(1, 550, 1000));
 
     this.player = new Player();
-
   }
 
   inlightTheWorld () {
@@ -31,7 +30,7 @@ class God {
 
   gravityPower () {
     for (var i = this.gravityForce; i > 0; i--) {
-      if (this.player.y < 500 && !this.player.hasInferiorCollisionWith(this.platformCollection)) {
+      if (!this.player.hasInferiorCollisionWith(this.platformCollection)) {
         this.player.gravity()
       };
     }

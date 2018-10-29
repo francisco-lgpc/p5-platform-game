@@ -1,11 +1,11 @@
 class Platform extends GameObject {
 
-  constructor (x, y) {
+  constructor (x, y, w = 50, h = 50) {
     super();
     this.x = x;
     this.y = y;
-    this.w = 50;
-    this.h = 50;
+    this.w = w;
+    this.h = h;
   }
 
   show () {
